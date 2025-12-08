@@ -1,0 +1,21 @@
+
+.article-page {
+    background-color: $color-white;
+
+    .article-img-wrapper {
+        img {
+            object-fit: cover;
+            min-height: 300px;
+            transition: transform 0.4s ease;
+        }
+
+        &:hover img {
+            transform: scale(1.02);
+        }
+    }
+
+    p {
+        line-height: 1.8; 
+        font-size: 1.05rem;
+    }
+}

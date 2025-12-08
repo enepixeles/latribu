@@ -1,0 +1,23 @@
+.product-card {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    &__img-wrapper {
+        height: 250px; // Mantenemos la altura fija
+        overflow: hidden; // Lo que se salga de la caja, se corta invisiblemente
+        border-radius: 1rem; // Aseguramos que las esquinas sigan redondas
+        
+        // Importante: Quitamos el flex-center para que la imagen se estire libremente
+        
+        img {
+            width: 100%;       // Ocupa todo el ancho
+            height: 100%;      // Ocupa todo el alto
+            object-fit: cover; // La magia: cubre el área sin estirarse (hace zoom si es necesario)
+            object-position: center; // Centra la imagen
+        }
+    }
+}

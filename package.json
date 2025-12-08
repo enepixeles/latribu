@@ -1,0 +1,10 @@
+{
+  "name": "best-daycare-project",
+  "version": "1.0.0",
+  "description": "Proyecto educativo de maquetación con SASS y Bootstrap",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrés Díaz"
+}

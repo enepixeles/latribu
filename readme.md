@@ -1,5 +1,11 @@
 # 🌟 LA TRIBU - BLOG
 
+URL's:
+
+https://github.com/enepixeles/latribu.git
+https://enepixeles.github.io/latribu/
+
+
 ## 📌 Descripción del Proyecto
 Este proyecto consiste en el desarrollo del frontpage de una página web moderna con enfoque **Mobile First**. El objetivo principal ha sido aplicar una arquitectura de estilos profesional y escalable utilizando **SASS** y el patrón **7-1**.
 

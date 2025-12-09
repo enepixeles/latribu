@@ -4,6 +4,7 @@
 
     &__content {
         position: relative;
+        padding-top: 20px;
         z-index: 10;
     }
 
@@ -42,7 +43,7 @@
         }
 
         @media (min-width: 992px) {
-            margin-top: -120px;
+            margin-top: -300px;
         }
     }
 }

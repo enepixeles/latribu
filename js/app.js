@@ -26,3 +26,10 @@
         $('#iconPlay').removeClass('d-none');
         $('#iconPause').addClass('d-none');
     };
+
+
+
+
+
+
+    

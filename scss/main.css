@@ -167,4 +167,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 .academia-page .text-danger {
   color: #e56b50 !important;
+}
+
+#quizModule .quiz-option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  transition: all 0.2s ease;
+}
+#quizModule .quiz-option:hover {
+  background-color: #e9ecef;
+  border-color: #adb5bd;
+}
+#quizModule .quiz-option.selected {
+  background-color: #0d6efd;
+  color: #fff;
+  border-color: #0d6efd;
+}
+#quizModule .quiz-option.correct {
+  background-color: #198754;
+  color: #fff;
+  border-color: #198754;
+}
+#quizModule .quiz-option.incorrect {
+  background-color: #dc3545;
+  color: #fff;
+  border-color: #dc3545;
 }/*# sourceMappingURL=main.css.map */

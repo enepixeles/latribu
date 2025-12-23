@@ -45,3 +45,44 @@
         color: #e56b50 !important; // Un naranjo terracota
     }
 }
+
+
+
+// Estilos para el Módulo de Cuestionario
+#quizModule {
+    .quiz-option {
+        display: block;
+        width: 100%;
+        text-align: left;
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 0.75rem;
+        padding: 1rem;
+        transition: all 0.2s ease;
+        
+        &:hover {
+            background-color: #e9ecef;
+            border-color: #adb5bd;
+        }
+
+        // Estilo cuando se selecciona una opción
+        &.selected {
+            background-color: #0d6efd; // Azul primario de Bootstrap
+            color: #fff;
+            border-color: #0d6efd;
+        }
+
+        // Estilos para feedback (después de responder)
+        &.correct {
+            background-color: #198754; // Verde
+            color: #fff;
+            border-color: #198754;
+        }
+
+        &.incorrect {
+            background-color: #dc3545; // Rojo
+            color: #fff;
+            border-color: #dc3545;
+        }
+    }
+}

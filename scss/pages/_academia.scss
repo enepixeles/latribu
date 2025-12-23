@@ -1,0 +1,47 @@
+// Estilos para la página Academia Enfoco
+
+.academia-page {
+    // La clase bg-light del body ya nos da el fondo gris, 
+    // pero aquí podemos ajustar detalles si hace falta.
+    
+    // Contenedor del video con botón play al centro
+    .video-wrapper {
+        position: relative; // Necesario para centrar el botón
+        cursor: pointer;
+
+        // Capa oscura al pasar el mouse
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        &:hover::after {
+            background: rgba(0,0,0,0.3);
+        }
+
+        .play-button-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            transition: transform 0.3s ease;
+        }
+
+        &:hover .play-button-overlay {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+    }
+
+    // Ajustes finos para la tarjeta del podcast
+    .bg-danger-subtle {
+        background-color: #fcece8 !important; // Un naranjo muy suave
+    }
+    
+    .text-danger {
+        color: #e56b50 !important; // Un naranjo terracota
+    }
+}

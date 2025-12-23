@@ -132,4 +132,39 @@ h1, h2, h3, h4, h5, h6 {
 .article-page p {
   line-height: 1.8;
   font-size: 1.05rem;
+}
+
+.academia-page .video-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+.academia-page .video-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.academia-page .video-wrapper:hover::after {
+  background: rgba(0, 0, 0, 0.3);
+}
+.academia-page .video-wrapper .play-button-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+.academia-page .video-wrapper:hover .play-button-overlay {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+.academia-page .bg-danger-subtle {
+  background-color: #fcece8 !important;
+}
+.academia-page .text-danger {
+  color: #e56b50 !important;
 }/*# sourceMappingURL=main.css.map */

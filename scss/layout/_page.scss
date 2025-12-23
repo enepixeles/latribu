@@ -57,6 +57,10 @@
     }
 }
 
+                .navbar-nav .nav-link:hover {
+                    font-weight: 600;
+                }
+
 .btn-nav {
     background-color: $color-accent;
     color: $color-white;

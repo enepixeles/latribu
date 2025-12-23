@@ -91,6 +91,10 @@ h1, h2, h3, h4, h5, h6 {
   color: #333333;
 }
 
+.navbar-nav .nav-link:hover {
+  font-weight: 600;
+}
+
 .btn-nav {
   background-color: #28a745;
   color: #ffffff;

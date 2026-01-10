@@ -197,4 +197,73 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #dc3545;
   color: #fff;
   border-color: #dc3545;
+}
+
+.tree-menu a,
+.tree-menu .text-muted,
+.tree-menu .text-dark,
+.tree-menu .menu-category > div {
+  color: #8c8e92 !important;
+  font-weight: 400 !important;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.tree-menu .menu-item a,
+.tree-menu .menu-category > div {
+  font-weight: 500 !important;
+  font-size: 0.9rem !important;
+}
+.tree-menu .tree-item a {
+  font-size: 0.85rem !important;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.tree-menu .tree-item a.text-primary {
+  color: #000000 !important;
+  font-weight: 600 !important;
+}
+.tree-menu .tree-item a.text-primary:hover {
+  color: #333333 !important;
+}
+.tree-menu a:hover,
+.tree-menu .menu-category > div:hover {
+  color: #000000 !important;
+}
+.tree-menu .tree-list {
+  border-color: #e0e0e0 !important;
+  margin-left: 0.5rem !important;
+}
+.tree-menu .tree-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 55%;
+  border-bottom: 1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+  border-bottom-left-radius: 8px;
+}
+.tree-menu .form-control, .tree-menu .input-group-text {
+  font-size: 0.9rem;
+  box-shadow: none;
+  border-color: #dee2e6;
+}
+
+aside h5 {
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  color: #000000 !important;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem !important;
+  text-transform: uppercase;
+}
+
+aside .d-flex[aria-expanded=true] .arrow-icon-sidebar {
+  transform: rotate(180deg);
+}
+aside .arrow-icon-sidebar {
+  transition: transform 0.3s ease;
+  font-size: 0.8rem;
+  color: #8c8e92;
 }/*# sourceMappingURL=main.css.map */

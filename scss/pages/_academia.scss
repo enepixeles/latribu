@@ -86,3 +86,100 @@
         }
     }
 }
+
+// Estilos del Nuevo Sidebar (Árbol) - Versión Final (Color + Grosor + Tamaño)
+.tree-menu {
+    
+    // --- 1. ESTILOS GENERALES Y TAMAÑOS ---
+    a, 
+    .text-muted, 
+    .text-dark,
+    .menu-category > div {
+        color: #8c8e92 !important;
+        font-weight: 400 !important; // Regular (Delgada)
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+
+    // --- 2. TÍTULOS (Bienvenido y Categorías) ---
+    .menu-item a,
+    .menu-category > div {
+        font-weight: 500 !important; // Medium
+        font-size: 0.9rem !important; // 📏 TAMAÑO: Un poco más chico que el estándar (14px)
+    }
+
+    // --- 3. SUB-ÍTEMS (Los Aprendizajes) ---
+    .tree-item a {
+        font-size: 0.85rem !important; // 📏 TAMAÑO: Más pequeño para la lista (13.5px)
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+    // --- 4. ÍTEM ACTIVO (El que estás viendo) ---
+    .tree-item a.text-primary {
+        color: #000000 !important; // Negro
+        font-weight: 600 !important; // Semi-bold
+        // El tamaño lo hereda del punto 3 (0.85rem)
+        
+        &:hover {
+            color: #333333 !important;
+        }
+    }
+
+    // --- 5. EFECTO HOVER GENERAL ---
+    a:hover,
+    .menu-category > div:hover { 
+        color: #000000 !important;
+    }
+    
+    // --- 6. LÍNEAS CONECTORAS ---
+    .tree-list {
+        border-color: #e0e0e0 !important;
+        margin-left: 0.5rem !important; // Ajuste fino para pegar más la línea al texto
+    }
+
+    .tree-item {
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 12px; // Línea horizontal un poco más corta por el cambio de tamaño
+            height: 55%; // Ajuste de altura de la línea
+            border-bottom: 1px solid #e0e0e0; // Línea más fina (1px en vez de 2px)
+            border-left: 1px solid #e0e0e0;   // Línea más fina
+            border-bottom-left-radius: 8px;
+        }
+    }
+
+    // Estilo para el input de búsqueda (también lo achicamos un poco)
+    .form-control, .input-group-text {
+        font-size: 0.9rem;
+        box-shadow: none;
+        border-color: #dee2e6;
+    }
+}
+
+// Ajuste para el Título del Sidebar (AULAS DE APRENDIZAJE)
+aside h5 {
+    font-size: 0.85rem !important; // Mucho más pequeño (aprox 13.5px)
+    font-weight: 700 !important;   // Mantenemos negrita para que se distinga
+    color: #000000 !important;     // Negro puro
+    letter-spacing: 0.5px;         // Un poquito de aire entre letras
+    margin-bottom: 1rem !important; // Ajustamos el espacio con el buscador
+    text-transform: uppercase;     // Aseguramos que sea mayúscula
+}
+
+// Estilos para el Título Colapsable en Móvil
+aside {
+    // Cuando el div padre tiene aria-expanded="true" (está abierto)
+    .d-flex[aria-expanded="true"] .arrow-icon-sidebar {
+        transform: rotate(180deg);
+    }
+
+    .arrow-icon-sidebar {
+        transition: transform 0.3s ease;
+        font-size: 0.8rem;
+        color: #8c8e92;
+    }
+}

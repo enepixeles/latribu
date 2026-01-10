@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es-Cl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Tribu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CORREGIDO: Versión 5.3.2 (Limpia, sin integrity que bloquee) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">    
+    
+    <link rel="stylesheet" href="scss/main.css">
+</head>
+<body class="bg-light">
+
+<!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">La Tribu.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#">Conoce el TDAH/TEA</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold border-bottom border-5 pb-2" href="#">✨ Academia Enfoco</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://enepixeles.github.io/banco-impulso/">Banco Impulso</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Guías para Padres</a></li>
+                </ul>
+            </div>
+                <a class="btn btn-nav rounded-pill px-4" href="#">Ingresar</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="academia-page py-5">
+        <div class="container">
+            <div class="row g-5">
+                
+                <!-- COLUMNA IZQUIERDA (Sidebar) -->
+              
+                <!-- ASIDE: SIDEBAR RESPONSIVO Y COMPLETO -->
+                <aside class="col-lg-3 pe-lg-4 mb-4 mb-lg-0">
+                    
+                    <!-- 1. ENCABEZADO / BOTÓN TOGGLE (Visible en Móvil) -->
+                    <div class="d-flex align-items-center justify-content-between mb-3 cursor-pointer"
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#sidebarMobileContent" 
+                        aria-expanded="false"
+                        role="button">
+                        
+                        <h5 class="fw-bold mb-0">AULAS DE APRENDIZAJE</h5>
+                        
+                        <!-- Flecha solo móvil -->
+                        <span class="d-lg-none small arrow-icon-sidebar">▼</span>
+                    </div>
+
+                    <!-- 2. CONTENIDO COLAPSABLE (Oculto en móvil, Visible en Desktop) -->
+                    <div id="sidebarMobileContent" class="collapse d-lg-block">
+                        
+                        <!-- Buscador -->
+                        <div class="input-group mb-4">
+                            <span class="input-group-text bg-light border-end-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#999" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                </svg>
+                            </span>
+                            <input type="text" class="form-control bg-light border-start-0" placeholder="Buscar lección...">
+                        </div>
+
+                        <!-- Menú Principal (Árbol) -->
+                        <div class="tree-menu">
+                            
+                            <!-- Ítem Bienvenida -->
+                            <div class="menu-item mb-2">
+                                <a href="#" class="d-flex align-items-center text-decoration-none text-dark fw-bold p-2 rounded hover-bg">
+                                    
+                                    <!-- 🖼️ AQUÍ ESTÁ EL ICONO PNG -->
+                                    <!-- Ajusta 'nombre-archivo.png' por el real que tengas en tu carpeta img -->
+                                    <img src="assets/academia-enfoco/icons/menu.png" 
+                                        alt="Icono" 
+                                        width="16" 
+                                        height="16" 
+                                        class="me-2">
+                                        
+                                    Bienvenido!
+                                </a>
+                            </div>
+
+                            <!-- CATEGORÍA 1: Educación Financiera -->
+                            <div class="menu-category">
+                                <!-- Título Categoría: Educación Financiera -->
+                                <div class="d-flex align-items-center text-muted fw-bold mb-2 cursor-pointer p-2 rounded hover-bg" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#listaFinanciera" 
+                                    aria-expanded="true">
+                                    
+                                    <!-- 🖼️ AQUÍ ESTÁ EL ICONO PNG -->
+                                    <img src="assets/academia-enfoco/icons/tarjeta.png" 
+                                        alt="Icono Educación" 
+                                        width="16" 
+                                        height="16" 
+                                        class="me-2">
+                                        
+                                    Educación Financiera
+                                    <span class="ms-auto small arrow-icon">▲</span>
+                                </div>
+
+                                <!-- Lista de Aprendizajes -->
+                                <div id="listaFinanciera" class="collapse show tree-list ps-3 border-start ms-2">
+                                    
+                                    <!-- Aprendizaje 1 -->
+                                    <div class="tree-item position-relative ps-3 mb-2">
+                                        <a href="academia-enfoco.html" class="d-block text-muted fw-bold text-decoration-none">
+                                            Aprendizaje 1
+                                        </a>
+                                    </div>
+
+                                    <!-- Aprendizaje 2 -->
+                                    <div class="tree-item position-relative ps-3 mb-2">
+                                        <a href="academia-enfoco-2.html" class="d-block text-muted text-decoration-none hover-text-dark">
+                                            Aprendizaje 2
+                                        </a>
+                                    </div>
+
+                                    <!-- Aprendizaje 3 -->
+                                    <div class="tree-item position-relative ps-3 mb-2">
+                                        <a href="academia-enfoco-3.html" class="d-block text-muted text-decoration-none hover-text-dark">
+                                            Aprendizaje 3
+                                        </a>
+                                    </div>
+
+                                    <!-- Aprendizaje 4 -->
+                                    <div class="tree-item position-relative ps-3 mb-2">
+                                        <a href="academia-enfoco-4.html" class="d-block text-primary text-decoration-none hover-text-dark">
+                                            Aprendizaje 4
+                                        </a>
+                                    </div>
+
+                                    <!-- Relleno visual para que no se vea vacío -->
+                                    <div class="tree-item position-relative ps-3 mb-2">
+                                        <a href="#" class="d-block text-muted text-decoration-none hover-text-dark">Aprendizaje 5</a>
+                                    </div>
+                                    <div class="tree-item position-relative ps-3 mb-2">
+                                        <a href="#" class="d-block text-muted text-decoration-none hover-text-dark">Aprendizaje 6</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CATEGORÍA 2: Grupos de Ayuda -->
+                            <div class="menu-category mt-3">
+                                <!-- Título Categoría: Grupos de Ayuda -->
+                                <div class="d-flex align-items-center text-muted fw-bold mb-2 cursor-pointer p-2 rounded hover-bg" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#listaGrupos" 
+                                    aria-expanded="false">
+                                    
+                                    <!-- 🖼️ AQUÍ ESTÁ EL ICONO PNG -->
+                                    <!-- Asegúrate de tener 'whatsapp-icon.png' en tu carpeta img -->
+                                    <img src="assets/academia-enfoco/icons/whatsapp.png" 
+                                        alt="Icono WhatsApp" 
+                                        width="16" 
+                                        height="16" 
+                                        class="me-2">
+                                        
+                                    Grupos de Ayuda
+                                    <span class="ms-auto small arrow-icon">▼</span>
+                                </div>
+
+                                <div id="listaGrupos" class="collapse tree-list ps-3 border-start ms-2">
+                                    <div class="tree-item position-relative ps-3 mb-2">
+                                        <a href="#" class="d-block text-muted text-decoration-none small">Introducción al equipo</a>
+                                    </div>
+                                    <div class="tree-item position-relative ps-3 mb-2">
+                                        <a href="#" class="d-block text-muted text-decoration-none small">Metas 2025</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div> <!-- Fin tree-menu -->
+
+                    </div> <!-- Fin sidebarMobileContent -->
+                </aside>
+
+
+                <!-- COLUMNA DERECHA (Contenido) -->
+                <section class="col-lg-8">
+
+                    <!-- Título Principal -->
+                    <h2 class="fw-bold mb-3">¿Cuánto dinero entra en mi bolsillo? 💰</h2>
+                    
+                    <!-- Texto Introductorio -->
+                    <div class="mb-5">
+                        <p class="text-muted mb-4">
+                            ¡Hola! Qué alegría que sigas aquí. Ya aprendimos a anotar nuestros gastos, pero para tener el mapa completo, necesitamos ver la otra cara de la moneda: <strong>nuestros ingresos</strong>.
+                        </p>
+                        <p class="text-muted mb-4">
+                            No importa si el dinero no alcanza como quisiéramos. Lo importante hoy es aprender a reconocerlo. Mirar nuestra realidad es el primer paso para dejar de sentir miedo y empezar a mandar nosotros sobre el dinero.
+                        </p>
+
+                        <!-- Concepto Ingreso -->
+                        <div class="bg-white p-4 rounded-4 shadow-sm border-start border-5 border-success mb-4">
+                            <h5 class="fw-bold text-success">¿Qué es un ingreso?</h5>
+                            <p class="mb-0 text-muted">Es muy simple: es toda la plata que "entra" a tu billetera o a tu cuenta. Imagina que tu bolsillo es un balde; el ingreso es toda el agua que cae dentro de él.</p>
+                        </div>
+
+                        <h5 class="fw-bold mt-4 mb-3">¿De dónde puede venir esa plata?</h5>
+                        <ul class="list-unstyled text-muted ps-2">
+                            <li class="mb-2">🛠️ <strong>Tu trabajo:</strong> Sueldo o trabajos por tu cuenta.</li>
+                            <li class="mb-2">🛒 <strong>Tus ventas:</strong> Si vendes productos, comida o ropa.</li>
+                            <li class="mb-2">🎁 <strong>Ayudas y pensiones:</strong> Pensión de alimentos, vejez o bonos.</li>
+                            <li class="mb-2">🏠 <strong>Arriendos:</strong> Si alquilas una pieza o espacio.</li>
+                        </ul>
+
+                        <!-- Consejos de Oro -->
+                        <div class="mt-4 p-4 bg-warning-subtle rounded-4">
+                            <h5 class="fw-bold mb-3">Consejos de oro para estar ordenados:</h5>
+                            <p class="mb-2">✅ <strong>Anota todo:</strong> Cada peso que recibes cuenta.</p>
+                            <p class="mb-2">✅ <strong>Si el dinero cambia mes a mes:</strong> Planifica con el monto más bajito que recibes siempre (ese es tu piso).</p>
+                            <p class="mb-0">✅ <strong>Tu negocio es aparte:</strong> No mezcles la plata de las ventas con la comida de la casa. ¡Son dos cajas distintas!</p>
+                        </div>
+
+                        <!-- Tarea -->
+                        <div class="mt-4 p-3 border border-dark border-2 border-dashed rounded-4 text-center">
+                            <h5 class="fw-bold">📝 Tarea del día: "Mi lista de entradas"</h5>
+                            <p class="text-muted mb-0">Busca un papel y anota todas las fuentes de dinero que recibiste el mes pasado. ¡Anótalo todo!</p>
+                        </div>
+                    </div>
+
+                    <!-- INFOGRAFÍA -->
+                    <div class="rounded-4 overflow-hidden shadow-sm mb-4">
+                        <img src="./img/academia-enfoco/aprendizaje4-infografia.jpg" alt="Mano recibiendo monedas y alcancías separadas" class="img-fluid w-100">
+                    </div>
+
+                    <!-- PODCAST -->
+                    <div class="card border-0 shadow-sm p-3 rounded-4 mb-5">
+                        <div class="d-flex align-items-center">
+                            <div class="rounded-3 bg-danger-subtle d-flex align-items-center justify-content-center me-3" style="width: 80px; height: 80px;">
+                                <span class="h1 text-danger mb-0">•</span>
+                                <span class="h1 text-danger mb-0">•</span>
+                                <span class="h1 text-danger mb-0">•</span>
+                            </div>
+                            
+                            <div class="flex-grow-1">
+                                <small class="text-muted d-block mb-1">⏱ 01:30 min</small>
+                                <h6 class="fw-bold mb-1">Podcast - La Lluvia de Ingresos</h6>
+                                <small class="text-muted">Saber cuánto entra es como prender la luz en una pieza oscura.</small>
+                            </div>
+
+                            <!-- ID estándar para app.js -->
+                            <audio id="audioPodcast" src="./assets/academia-enfoco/aprendizaje-04.m4a"></audio>
+
+                            <button id="btnPlayPodcast" class="btn btn-light rounded-circle p-2 ms-2" style="width: 50px; height: 50px;">
+                                <svg id="iconPlay" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                    <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+                                </svg>
+                                <svg id="iconPause" class="d-none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" class="bi bi-pause-fill" viewBox="0 0 16 16">
+                                    <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- ACORDEÓN PREGUNTAS FRECUENTES -->
+                    <div class="mt-5">
+                        <h4 class="fw-bold mb-4">Preguntas Frecuentes</h4>
+                        <div class="accordion custom-accordion" id="accordionPreguntasClase4">
+                            
+                            <!-- Ítem 1 -->
+                            <div class="accordion-item mb-3 border-0 shadow-sm rounded-4 overflow-hidden">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne4">
+                                        ¿Qué pasa si este mes no recibí nada fijo?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne4" class="accordion-collapse collapse" data-bs-parent="#accordionPreguntasClase4">
+                                    <div class="accordion-body text-muted">
+                                        No te preocupes. Anota lo que recibas por "pololos" o trabajos esporádicos. Lo importante es registrar cada entrada, por pequeña que sea.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Ítem 2 -->
+                            <div class="accordion-item mb-3 border-0 shadow-sm rounded-4 overflow-hidden">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo4">
+                                        ¿Por qué debo separar la plata de mi negocio de la de mi casa?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo4" class="accordion-collapse collapse" data-bs-parent="#accordionPreguntasClase4">
+                                    <div class="accordion-body text-muted">
+                                        Porque si sacas plata de la venta para pagar el pan de la tarde, después no tendrás para volver a comprar materiales para tu negocio. ¡Es para que tu negocio pueda crecer!
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Ítem 3 -->
+                            <div class="accordion-item mb-3 border-0 shadow-sm rounded-4 overflow-hidden">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree4">
+                                        Me da pena ver que entra poca plata, ¿igual debo anotarlo?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree4" class="accordion-collapse collapse" data-bs-parent="#accordionPreguntasClase4">
+                                    <div class="accordion-body text-muted">
+                                        ¡Claro que sí! Anotarlo es el primer paso para buscar estrategias y que, en el futuro, esa lista sea cada vez más larga.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- CUESTIONARIO -->
+                    <div id="quizModule" class="mt-5 card border-0 shadow-sm p-4 p-md-5 rounded-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h4 class="fw-bold">Cuestionario Ingresos</h4>
+                                <small class="text-muted">Basado en la clase de hoy</small>
+                            </div>
+                            <span id="quizProgress" class="fw-bold text-muted">1 / 2</span>
+                        </div>
+                        <p id="quizQuestion" class="fs-5 mt-4 mb-4">Cargando pregunta...</p>
+                        <div id="quizOptions" class="d-grid gap-3 mb-4"></div>
+                        <div class="mb-4">
+                            <a id="showHint" class="text-decoration-none small" data-bs-toggle="collapse" href="#hintContent">
+                                Pista <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>
+                            </a>
+                            <div class="collapse pt-2" id="hintContent">
+                                <small id="hintText" class="text-muted p-2 bg-light rounded d-block">Cargando pista...</small>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <button id="btnNextQuestion" class="btn btn-primary rounded-pill px-4" disabled>Siguiente</button>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer py-5 mt-5 border-top">
+        <div class="container d-md-flex justify-content-between align-items-center">
+            <div class="mb-3 mb-md-0">
+                <h4 class="fw-bold">hablemos@latribu.cl</h4>
+                <p class="small text-muted mb-0">Mi casa, Puente Alto</p>
+                <p class="small text-muted">© 2025 Andrés Díaz / Enepixeles. Fotos por Gemini y Freepick.</p>
+            </div>
+            <div class="text-md-end">
+                <h4 class="fw-bold">(+569) 4556 0196</h4>
+                <p class="small text-muted mb-0">Lunes - Viernes 9:00 AM - 18:00 PM</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+    <!-- CORREGIDO: Versión 5.3.2 (Estable) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="./js/app.js"></script>
+    <script src="./js/academia-enfoco/01-educacion-financiera/cuestionario.js"></script>
+</body>
+</html>

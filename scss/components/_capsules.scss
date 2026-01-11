@@ -1,0 +1,108 @@
+/* ==========================================================================
+   COMPONENT: Cápsulas de Información y Ejercicios (La Tribu)
+   Diseñado para destacar consejos y tareas de forma visual y amigable.
+   ========================================================================== */
+
+.info-capsule {
+    // Color de fondo amarillo/naranjo por defecto para consejos
+    background-color: #ffcc66; 
+    border-radius: 1.5rem;
+    
+    // Espaciado interno: le damos harto aire para que se vea cómodo
+    // Arriba: 2.5rem | Lados: 2.5rem | Abajo: 5.5rem (espacio para el icono flotante)
+    padding: 2.5rem 2.5rem 5.5rem 2.5rem; 
+    
+    // Necesario para que el icono del lápiz se ubique bien en la esquina
+    position: relative;
+    
+    // --- MARGENES EXTERNOS ---
+    // Les damos 3.5rem para que respiren y no se peguen al texto de arriba ni al de abajo
+    margin-top: 3.5rem;    
+    margin-bottom: 3.5rem; 
+    
+    // Una sombra suave para que la cápsula "flote" un poquito sobre el fondo gris
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+
+    // VARIANTE: Si la cápsula es de ejercicio, la pintamos morada
+    &--morado {
+        background-color: #b392f0; 
+    }
+
+    // Título de la cápsula (ej: "Tres ideas que te van a ayudar")
+    &__title {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600; 
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        color: $color-primary; // Usamos el color oscuro que definimos antes
+    }
+
+    // Texto descriptivo o instrucciones
+    &__text {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    // Lista de consejos dentro de la cápsula
+    &__list {
+        list-style: none !important; // Borro los puntos negros feos que pone el navegador
+        padding: 0 !important;
+        margin: 0;
+    }
+
+    // Cada ítem de la lista (icono + texto)
+    &__item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1.2rem;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.95rem;
+
+        strong {
+            font-weight: 700; // Para que los puntos clave resalten
+        }
+    }
+
+    // El icono del check (ajustado para que no se arranque el tamaño)
+    &__icon-check {
+        width: 24px !important;   
+        height: 24px !important;  
+        min-width: 24px; // Para que no se achique si el texto es muy largo
+        margin-right: 12px;
+        margin-top: 3px;
+        object-fit: contain; // Aseguro que el check mantenga su forma original
+    }
+
+    // Texto pequeñito que pusimos al final (ej: "Aprendizaje 4...")
+    &__footer-text {
+        position: absolute;
+        bottom: 30px;
+        left: 2.5rem;
+        font-size: 0.8rem;
+        font-family: 'Poppins', sans-serif;
+        opacity: 0.7; // Un poquito transparente para que no distraiga tanto
+    }
+
+    // El circulito negro flotante con el icono del lápiz o notebook
+    &__edit-floating {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background-color: #000;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            // Ajusto el tamaño de la imagen que va dentro del círculo negro
+            width: 20px !important;
+            height: 20px !important;
+            object-fit: contain;
+        }
+    }
+}

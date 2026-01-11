@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -134,6 +135,9 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.05rem;
 }
 
+/* ==========================================================================
+   PÁGINA: Academia Enfoco - Estilos Principales
+   ========================================================================== */
 .academia-page .video-wrapper {
   position: relative;
   cursor: pointer;
@@ -169,6 +173,65 @@ h1, h2, h3, h4, h5, h6 {
   color: #e56b50 !important;
 }
 
+.breadcrumb-custom {
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  color: #000000 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 0 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.custom-accordion .accordion-item {
+  background-color: #fff;
+  border: none;
+  margin-bottom: 1rem;
+}
+.custom-accordion .accordion-button {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  color: #333333 !important;
+  padding: 1.5rem 1.25rem;
+  border-radius: 0.75rem !important;
+  border: 1px solid #dee2e6;
+}
+.custom-accordion .accordion-button:not(.collapsed) {
+  font-weight: 600 !important;
+  color: #333333;
+  background-color: #f8f9fa;
+  box-shadow: none;
+  border-bottom: none;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+.custom-accordion .accordion-button:focus {
+  box-shadow: none;
+  border-color: #dee2e6;
+}
+.custom-accordion .accordion-button::after {
+  background-size: 1rem;
+}
+.custom-accordion .accordion-body {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-top: none;
+  border-bottom-left-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+}
+
+#quizModule {
+  border: 2px solid #D6D7D8 !important;
+  border-radius: 1.5rem;
+  background-color: #ffffff;
+  padding: 2.5rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
 #quizModule .quiz-option {
   display: block;
   width: 100%;
@@ -178,92 +241,287 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 0.75rem;
   padding: 1rem;
   transition: all 0.2s ease;
+  margin-bottom: 12px;
+  color: #333;
 }
 #quizModule .quiz-option:hover {
   background-color: #e9ecef;
   border-color: #adb5bd;
 }
-#quizModule .quiz-option.selected {
-  background-color: #0d6efd;
-  color: #fff;
-  border-color: #0d6efd;
-}
-#quizModule .quiz-option.correct {
-  background-color: #198754;
-  color: #fff;
-  border-color: #198754;
+#quizModule .quiz-option.selected, #quizModule .quiz-option.correct {
+  background-color: #28a745 !important;
+  color: #fff !important;
+  border: none !important;
+  outline: none !important;
 }
 #quizModule .quiz-option.incorrect {
-  background-color: #dc3545;
-  color: #fff;
-  border-color: #dc3545;
+  background-color: #dc3545 !important;
+  color: #fff !important;
+  border-color: #dc3545 !important;
 }
 
-.tree-menu a,
-.tree-menu .text-muted,
-.tree-menu .text-dark,
-.tree-menu .menu-category > div {
-  color: #8c8e92 !important;
-  font-weight: 400 !important;
-  text-decoration: none;
-  transition: all 0.2s ease;
+.progress-container {
+  height: 8px;
+  background-color: #e9ecef;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
 }
-.tree-menu .menu-item a,
-.tree-menu .menu-category > div {
-  font-weight: 500 !important;
-  font-size: 0.9rem !important;
+.progress-container__bar {
+  height: 100%;
+  background-color: #28a745;
+  width: 0%;
+  transition: width 0.4s ease;
 }
-.tree-menu .tree-item a {
-  font-size: 0.85rem !important;
-  padding-top: 2px;
-  padding-bottom: 2px;
+
+#btnNextQuestion {
+  background-color: #28a745 !important;
+  border-color: #28a745 !important;
+  color: #ffffff !important;
+  font-weight: 600;
 }
-.tree-menu .tree-item a.text-primary {
-  color: #000000 !important;
-  font-weight: 600 !important;
-}
-.tree-menu .tree-item a.text-primary:hover {
-  color: #333333 !important;
-}
-.tree-menu a:hover,
-.tree-menu .menu-category > div:hover {
-  color: #000000 !important;
-}
-.tree-menu .tree-list {
+#btnNextQuestion:disabled {
+  background-color: #e0e0e0 !important;
   border-color: #e0e0e0 !important;
-  margin-left: 0.5rem !important;
+  color: #999;
 }
-.tree-menu .tree-item::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 12px;
-  height: 55%;
-  border-bottom: 1px solid #e0e0e0;
-  border-left: 1px solid #e0e0e0;
-  border-bottom-left-radius: 8px;
+
+.quiz-hint__trigger {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  opacity: 1 !important;
 }
-.tree-menu .form-control, .tree-menu .input-group-text {
-  font-size: 0.9rem;
-  box-shadow: none;
-  border-color: #dee2e6;
+.quiz-hint__trigger:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+.quiz-hint__trigger::after {
+  display: none;
+}
+.quiz-hint__icon {
+  width: 14px;
+  height: auto;
+  margin-right: 4px;
+  opacity: 1 !important;
+}
+.quiz-hint__text {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+  color: #000 !important;
+  opacity: 1 !important;
+  font-weight: 500;
+}
+.quiz-hint__content {
+  padding: 12px 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 3px solid #dee2e6;
+  margin-top: 10px;
 }
 
 aside h5 {
   font-size: 0.85rem !important;
   font-weight: 700 !important;
-  color: #000000 !important;
-  letter-spacing: 0.5px;
-  margin-bottom: 1rem !important;
+  color: #000 !important;
   text-transform: uppercase;
 }
 
-aside .d-flex[aria-expanded=true] .arrow-icon-sidebar {
-  transform: rotate(180deg);
-}
 aside .arrow-icon-sidebar {
   transition: transform 0.3s ease;
   font-size: 0.8rem;
-  color: #8c8e92;
+  color: #8C8E92;
+}
+
+.tree-menu a, .tree-menu .text-muted {
+  color: #8C8E92 !important;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.tree-menu .tree-item {
+  position: relative;
+  padding-left: 25px !important;
+}
+.tree-menu .tree-item::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 15px;
+  height: 15px;
+  background-image: url("../assets/academia-enfoco/icons/conector-arbol.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.tree-menu .tree-item a.text-primary {
+  color: #000 !important;
+  font-weight: 600 !important;
+}
+
+.video-player {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background-color: #000;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.video-player__thumb {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.8;
+}
+.video-player__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+.video-player__overlay--playing {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+.video-player__overlay:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+.video-player__main-icon {
+  width: 80px;
+  fill: white;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+.video-player__controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  display: flex;
+  align-items: center;
+}
+.video-player__btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.video-player__btn:hover {
+  transform: scale(1.1);
+}
+.video-player__time {
+  color: white;
+  font-size: 0.8rem;
+  font-family: monospace;
+}
+.video-player__progress {
+  flex-grow: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  position: relative;
+  cursor: pointer;
+}
+.video-player__progress-fill {
+  height: 100%;
+  background: #28a745;
+  width: 0%;
+  border-radius: 2px;
+}
+.video-player__logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 80px;
+  height: auto;
+  z-index: 10;
+  opacity: 0.9;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* ==========================================================================
+   COMPONENT: Cápsulas de Información y Ejercicios (La Tribu)
+   Diseñado para destacar consejos y tareas de forma visual y amigable.
+   ========================================================================== */
+.info-capsule {
+  background-color: #ffcc66;
+  border-radius: 1.5rem;
+  padding: 2.5rem 2.5rem 5.5rem 2.5rem;
+  position: relative;
+  margin-top: 3.5rem;
+  margin-bottom: 3.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+.info-capsule--morado {
+  background-color: #b392f0;
+}
+.info-capsule__title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #333333;
+}
+.info-capsule__text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.info-capsule__list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0;
+}
+.info-capsule__item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+}
+.info-capsule__item strong {
+  font-weight: 700;
+}
+.info-capsule__icon-check {
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px;
+  margin-right: 12px;
+  margin-top: 3px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.info-capsule__footer-text {
+  position: absolute;
+  bottom: 30px;
+  left: 2.5rem;
+  font-size: 0.8rem;
+  font-family: "Poppins", sans-serif;
+  opacity: 0.7;
+}
+.info-capsule__edit-floating {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #000;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.info-capsule__edit-floating img {
+  width: 20px !important;
+  height: 20px !important;
+  -o-object-fit: contain;
+     object-fit: contain;
 }/*# sourceMappingURL=main.css.map */

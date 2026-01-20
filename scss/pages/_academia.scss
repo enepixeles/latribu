@@ -3,38 +3,7 @@
    ========================================================================== */
 
 .academia-page {
-    // Contenedor del video con botón play al centro
-    .video-wrapper {
-        position: relative;
-        cursor: pointer;
-
-        &::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        &:hover::after {
-            background: rgba(0,0,0,0.3);
-        }
-
-        .play-button-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 2;
-            transition: transform 0.3s ease;
-        }
-
-        &:hover .play-button-overlay {
-            transform: translate(-50%, -50%) scale(1.1);
-        }
-    }
-
-    // Estilos personalizados para la sección del Podcast
+    // Estilos para resaltar la zona del Podcast
     .bg-danger-subtle {
         background-color: #fcece8 !important; 
     }
@@ -44,7 +13,7 @@
     }
 }
 
-// 🧭 BREADCRUMB (ESTILO AULAS DE APRENDIZAJE)
+// 🧭 BREADCRUMB (Indica la lección actual)
 .breadcrumb-custom {
     font-size: 0.85rem !important;
     font-weight: 700 !important;
@@ -55,236 +24,69 @@
     margin-bottom: 0.5rem !important;
 }
 
-
 // ==========================================
-// ACORDEÓN PERSONALIZADO (Preguntas)
+// 📱 BARRA DE CONTROLES MÓVIL (LOS 5 BOTONES)
 // ==========================================
-.custom-accordion {
-    .accordion-item {
-        background-color: #fff;
+/* 
+   Esta barra la dejé transparente para que se vea el fondo de la página.
+   Le quité todas las sombras para que el diseño sea minimalista y limpio.
+*/
+.mobile-audio-bar {
+    background-color: transparent !important; 
+    box-shadow: none !important; 
+    border: none;
+    padding: 10px 0;
+    
+    &__btn {
+        background: none;
         border: none;
-        margin-bottom: 1rem;
-    }
-
-    .accordion-button {
-        // --- UNIFICACIÓN CON EL QUIZ ---
-        font-family: 'Poppins', sans-serif;
-        font-size: 1rem !important;    // Igual al fs-5 del quiz
-        font-weight: 400 !important;      // Peso regular igual a la pregunta del quiz
-        color: $color-primary !important; // Tu color #333333
-        padding: 1.5rem 1.25rem;
-        border-radius: 0.75rem !important;
-        border: 1px solid #dee2e6;        // Un borde sutil para que parezca una tarjeta
-        
-        &:not(.collapsed) {
-            font-weight: 600 !important; 
-            color: $color-primary;
-            background-color: #f8f9fa;
-            box-shadow: none;
-            border-bottom: none;
-            border-bottom-left-radius: 0 !important;
-            border-bottom-right-radius: 0 !important;
-        }
-        
-        &:focus {
-            box-shadow: none;
-            border-color: #dee2e6;
-        }
-
-        // Flecha del acordeón
-        &::after {
-            background-size: 1rem;
-        }
-    }
-
-    .accordion-body {
-        font-size: 1rem;
-        line-height: 1.6;
-        color: #666;
-        background-color: #f8f9fa;
-        border: 1px solid #dee2e6;
-        border-top: none;
-        border-bottom-left-radius: 0.75rem;
-        border-bottom-right-radius: 0.75rem;
-    }
-}
-
-// ==========================================
-// MÓDULO DE CUESTIONARIO CON BARRA
-// ==========================================
-#quizModule {
-    border: 2px solid #D6D7D8 !important; 
-    border-radius: 1.5rem;
-    background-color: #ffffff;
-    padding: 2.5rem;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-
-    .quiz-option {
-        display: block;
-        width: 100%;
-        text-align: left;
-        background-color: #f8f9fa;
-        border: 1px solid #dee2e6;
-        border-radius: 0.75rem;
-        padding: 1rem;
-        transition: all 0.2s ease;
-        margin-bottom: 12px;
-        color: #333;
-        
-        &:hover {
-            background-color: #e9ecef;
-            border-color: #adb5bd;
-        }
-
-        &.selected, &.correct {
-            background-color: #28a745 !important; 
-            color: #fff !important;
-            border: none !important; 
-            outline: none !important;
-        }
-
-        &.incorrect {
-            background-color: #dc3545 !important;
-            color: #fff !important;
-            border-color: #dc3545 !important;
-        }
-    }
-}
-
-// Componente de la Barra de Progreso
-.progress-container {
-    height: 8px;
-    background-color: #e9ecef;
-    border-radius: 10px;
-    overflow: hidden;
-    width: 100%;
-
-    &__bar {
-        height: 100%;
-        background-color: #28a745;
-        width: 0%;
-        transition: width 0.4s ease;
-    }
-}
-
-// Botón Siguiente
-#btnNextQuestion {
-    background-color: #28a745 !important;
-    border-color: #28a745 !important;
-    color: #ffffff !important;
-    font-weight: 600;
-
-    &:disabled {
-        background-color: #e0e0e0 !important;
-        border-color: #e0e0e0 !important;
-        color: #999;
-    }
-}
-
-
-// ==========================================
-// COMPONENTE: PISTA DEL CUESTIONARIO (COLOR SÓLIDO)
-// ==========================================
-.quiz-hint {
-    &__trigger {
-        display: inline-flex;
+        padding: 10px;
+        display: flex;
         align-items: center;
-        text-decoration: none;
-        // Quitamos la opacidad inicial para que el texto sea sólido desde el principio
-        opacity: 1 !important; 
+        justify-content: center;
+        transition: transform 0.2s ease;
 
-        &:hover {
-            opacity: 0.8; // Solo aquí permitimos un poquito de cambio al pasar el mouse
-            text-decoration: none;
+        &:active {
+            transform: scale(0.9); // Efecto táctil para el celular
         }
-        
-        &::after {
-            display: none;
+
+        img {
+            width: 26px;
+            height: auto;
         }
-    }
 
-    &__icon {
-        width: 14px; 
-        height: auto;
-        margin-right: 4px;
-        opacity: 1 !important; // Icono sólido también
-    }
+        // Estilo para el número de velocidad (1x, 1.5x, etc.)
+        &--text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: #333;
+            min-width: 50px;
+        }
 
-    &__text {
-        font-family: 'Poppins', sans-serif;
-        font-size: 0.95rem;
-        // COLOR EXACTO SOLICITADO
-        color: #000 !important; 
-        // Refuerzo la opacidad total por si Bootstrap o un reset me están molestando
-        opacity: 1 !important; 
-        // Le puse 500 (Medium) para que el color claro tenga más "cuerpo" y se lea bien
-        font-weight: 500; 
-    }
-
-    &__content {
-        padding: 12px 15px;
-        background-color: #f8f9fa;
-        border-radius: 8px;
-        border-left: 3px solid #dee2e6;
-        margin-top: 10px;
+        // Botón negro redondo (Play/Pausa)
+        &--main {
+            background-color: #000;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            box-shadow: none !important; // Sin sombra según lo pedido
+            
+            svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
     }
 }
-
 
 // ==========================================
-// SIDEBAR Y TREE MENU
-// ==========================================
-
-aside h5 {
-    font-size: 0.85rem !important;
-    font-weight: 700 !important;
-    color: #000 !important;
-    text-transform: uppercase;
-}
-
-aside .arrow-icon-sidebar {
-    transition: transform 0.3s ease;
-    font-size: 0.8rem;
-    color: #8C8E92;
-}
-
-.tree-menu {
-    a, .text-muted {
-        color: #8C8E92 !important;
-        text-decoration: none;
-        font-size: 0.9rem;
-    }
-
-    .tree-item {
-        position: relative;
-        padding-left: 25px !important;
-
-        &::before {
-            content: '';
-            position: absolute;
-            top: 2px; left: 5px;
-            width: 15px; height: 15px;
-            background-image: url('../assets/academia-enfoco/icons/conector-arbol.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
-        
-        a.text-primary {
-            color: #000 !important;
-            font-weight: 600 !important;
-        }
-    }
-}
-
-
-// ==========================================
-// REPRODUCTOR DE VIDEO (AUDIO VISUAL)
+// 🎬 REPRODUCTOR DE VIDEO/AUDIO (INTEGRADO)
 // ==========================================
 .video-player {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9; // Formato rectangular de video
+    aspect-ratio: 16 / 9;
     background-color: #000;
     border-radius: 1rem;
     overflow: hidden;
@@ -295,63 +97,175 @@ aside .arrow-icon-sidebar {
         opacity: 0.8;
     }
 
- &__overlay {
+    // Logo de La Tribu tipo marca de agua
+    &__logo {
+        position: absolute;
+        top: 20px; left: 20px;
+        width: 80px; height: auto;
+        z-index: 10;
+        opacity: 0.9;
+        pointer-events: none;
+    }
+
+    // Capa oscura que da el efecto "fade" al estar pausado
+    &__overlay {
         position: absolute; top: 0; left: 0; width: 100%; height: 100%;
         display: flex; align-items: center; justify-content: center;
-        background: rgba(0,0,0,0.4); // Sombra inicial
+        background: rgba(0,0,0,0.4); 
         cursor: pointer;
+        transition: background-color 0.5s ease;
+        z-index: 5;
         
-        // --- EL TRUCO DEL FADE ---
-        transition: background-color 0.5s ease; // Hace que el cambio sea suave
-        
-        // Clase que aplicaremos con JS cuando esté sonando
         &--playing {
-            background-color: rgba(0,0,0,0) !important; // Fondo transparente
+            background-color: rgba(0,0,0,0) !important;
         }
-
-        &:hover { background: rgba(0,0,0,0.5); }
     }
 
+    // Icono de play gigante (solo para Desktop)
     &__main-icon {
         width: 80px; fill: white;
-        filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
     }
 
+    // Barra de tiempo y progreso
     &__controls {
         position: absolute; bottom: 0; left: 0; width: 100%;
-        padding: 20px;
-        background: linear-gradient(transparent, rgba(0,0,0,0.8));
+        padding: 15px 20px;
+        background: linear-gradient(transparent, rgba(0,0,0,0.9));
         display: flex; align-items: center;
+        gap: 15px;
+        z-index: 15;
     }
 
+    // Botón de play pequeño de la barra
     &__btn {
-        background: none; border: none; cursor: pointer;
-        &:hover { transform: scale(1.1); }
+        background: transparent; 
+        border: none;
+        width: 32px; height: 32px;
+        display: flex; align-items: center; justify-content: center;
+        cursor: pointer;
+
+        svg {
+            fill: white; 
+            width: 20px; height: 20px;
+        }
     }
 
     &__time {
         color: white; font-size: 0.8rem; font-family: monospace;
+        min-width: 45px;
     }
 
     &__progress {
-        flex-grow: 1; height: 4px; background: rgba(255,255,255,0.3);
-        border-radius: 2px; position: relative; cursor: pointer;
+        flex-grow: 1; height: 6px; background: rgba(255,255,255,0.3);
+        border-radius: 10px; position: relative; cursor: pointer;
     }
 
     &__progress-fill {
-        height: 100%; background: #28a745; width: 0%;
-        border-radius: 2px;
+        height: 100%; background: #28a745; // El verde característico
+        width: 0%;
+        border-radius: 10px;
     }
 
-        &__logo {
-        position: absolute;
-        top: 20px;    // Distancia desde arriba
-        left: 20px;   // Distancia desde la izquierda
-        width: 80px;  // Ajusta el tamaño según tu logo
-        height: auto;
-        z-index: 10;  // Para que esté por sobre la imagen pero no tape los controles
-        opacity: 0.9; // Un pelito transparente para que parezca marca de agua
-        pointer-events: none; // Para que si el usuario hace click justo ahí, el video igual parta
-        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); // Sombra suave para que resalte en fondos claros
+    // 📱 AJUSTES ESPECÍFICOS PARA MÓVIL
+    @media (max-width: 991px) {
+        &__main-icon {
+            display: none !important; // Escondemos el play gigante para no tapar la foto
+        }
+
+        &__controls {
+            display: flex !important; // Mostramos la barra de tiempo y progreso
+            padding: 10px 15px;
+        }
+
+        &__btn {
+            display: none !important; // Escondemos solo el play chico (ya tenemos los 5 botones)
+        }
+
+        &__time {
+            font-size: 0.7rem; // Números más chicos para que no se amontonen
+        }
+    }
+}
+
+// ==========================================
+// 🧠 MÓDULO DEL CUESTIONARIO (RESTAURADO)
+// ==========================================
+#quizModule {
+    border: 2px solid #D6D7D8 !important; 
+    border-radius: 1.5rem;
+    background-color: #ffffff;
+    padding: 2.5rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+    .quiz-option {
+        display: block; width: 100%; text-align: left;
+        background-color: #f8f9fa; border: 1px solid #dee2e6;
+        border-radius: 0.75rem; padding: 1rem;
+        margin-bottom: 12px; color: #333;
+        transition: all 0.2s ease;
+        
+        &:hover { background-color: #e9ecef; }
+
+        &.selected, &.correct {
+            background-color: #28a745 !important; color: #fff !important; border: none !important;
+        }
+        &.incorrect {
+            background-color: #dc3545 !important; color: #fff !important;
+        }
+    }
+}
+
+// Barra de progreso del examen
+.progress-container {
+    height: 8px; background-color: #e9ecef; border-radius: 10px; overflow: hidden;
+    &__bar {
+        height: 100%; background-color: #28a745; width: 0%;
+        transition: width 0.4s ease;
+    }
+}
+
+// Botón Siguiente del Quiz
+#btnNextQuestion {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+    color: #ffffff !important;
+    &:disabled {
+        background-color: #e0e0e0 !important; border-color: #e0e0e0 !important; color: #999;
+    }
+}
+
+// Estilo de la pista (ampolleta pequeña)
+.quiz-hint {
+    &__trigger { display: inline-flex; align-items: center; text-decoration: none; }
+    &__icon { width: 18px !important; height: auto; margin-right: 8px; }
+    &__text { font-family: 'Poppins', sans-serif; font-size: 0.95rem; color: #000 !important; font-weight: 500; }
+    &__content { padding: 12px 15px; background-color: #f8f9fa; border-radius: 8px; border-left: 3px solid #dee2e6; margin-top: 10px; }
+}
+
+// ==========================================
+// OTROS COMPONENTES (ACORDEÓN Y MENÚ)
+// ==========================================
+.custom-accordion {
+    .accordion-item { background-color: #fff; border: none; margin-bottom: 1rem; }
+    .accordion-button {
+        font-family: 'Poppins', sans-serif; font-size: 1rem !important; font-weight: 400 !important;
+        color: #333333 !important; padding: 1.5rem 1.25rem; border-radius: 0.75rem !important; border: 1px solid #dee2e6;
+        &:not(.collapsed) { font-weight: 600 !important; color: #333; background-color: #f8f9fa; }
+    }
+}
+
+aside h5 { font-size: 0.85rem !important; font-weight: 700 !important; color: #000 !important; text-transform: uppercase; }
+
+.tree-menu {
+    a, .text-muted { color: #8C8E92 !important; text-decoration: none; font-size: 0.9rem; }
+    .tree-item {
+        position: relative; padding-left: 25px !important;
+        &::before {
+            content: ''; position: absolute; top: 2px; left: 5px; width: 15px; height: 15px;
+            background-image: url('../assets/academia-enfoco/icons/conector-arbol.png');
+            background-size: contain; background-repeat: no-repeat;
+        }
+        a.text-primary { color: #000 !important; font-weight: 600 !important; }
     }
 }
